@@ -6,25 +6,25 @@ class ArrayUtilsTest extends GroovyTestCase {
 
     void testGetMaxValueFromArr() {
         setup:
-        long[] arr = [1L, 2L, -100L, 55L]
+        long[][] arr = [[1L, 2L], [-100L, 55L]]
         when:
         def result = arrayUtils.getMaxValueFromArr(arr)
         then:
-        result == arr[3]
+        result == arr[1][1]
     }
 
     void testGetMinValueFromArr() {
         setup:
-        long[] arr = [1L, 2L, -100L, 55L]
+        long[][] arr = [[1L, 2L], [-100L, 55L]]
         when:
         def result = arrayUtils.getMinValueFromArr(arr)
         then:
-        result == arr[2]
+        result == arr[1][0]
     }
 
     void testGetMidValueFromArr() {
         setup:
-        long[] arr = [1L, 2L, 3L, 2L]
+        long[][] arr = [[1L, 2L], [3L, 2L]]
         when:
         def result = arrayUtils.getMidValueFromArr(arr)
         then:
